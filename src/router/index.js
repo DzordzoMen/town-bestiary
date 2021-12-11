@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Cities from '../views/Cities.vue';
 import City from '../views/City.vue';
+import Carts from '../views/Carts.vue';
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,7 @@ const routes = [
   {
     path: '/carts',
     name: 'Carts',
+    component: Carts,
   },
   {
     path: '/report',
