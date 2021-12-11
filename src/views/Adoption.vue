@@ -122,6 +122,6 @@ label {
 
 .bottom-button {
   position: absolute;
-  bottom: 56px;
+  bottom: 0;
 }
 </style>
