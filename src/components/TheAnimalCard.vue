@@ -6,13 +6,13 @@
     @click="$emit('showAdvancedInfo', id)"
   >
     <v-img
-      :src="image"
+      :src="photo"
       width="100%"
       height="100"
       :alt="name"
     />
 
-    <v-card-title class="px-2 py-1 lato-bold" style="font-size: 1.12rem">
+    <v-card-title class="px-2 py-1 lato-bold text-truncate d-block" style="font-size: 1.12rem">
       {{ name }}
     </v-card-title>
 
@@ -22,13 +22,13 @@
           Populacja:
         </v-col>
         <v-col class="grow">
-          {{ pupulation }}
+          {{ population }}
         </v-col>
         <v-col class="shrink lato-bold">
           Środowisko:
         </v-col>
-        <v-col class="grow">
-          {{ env }}
+        <v-col class="grow text-truncate d-block">
+          {{ environment }}
         </v-col>
       </v-row>
     </v-card-text>
@@ -47,7 +47,7 @@ export default {
       type: String,
       required: true,
     },
-    image: {
+    photo: {
       type: String,
       required: true,
     },
@@ -55,15 +55,15 @@ export default {
       type: String,
       required: true,
     },
-    pupulation: {
+    population: {
+      type: [String, Number],
+      required: true,
+    },
+    feeding: {
       type: String,
       required: true,
     },
-    food: {
-      type: String,
-      required: true,
-    },
-    env: {
+    environment: {
       type: String,
       required: true,
     },
