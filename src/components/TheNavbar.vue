@@ -14,7 +14,7 @@
         width="40"
       />
 
-      Bestiariusz miejski
+      Bestiariusz Miejski
     </div>
 
     <v-spacer />
