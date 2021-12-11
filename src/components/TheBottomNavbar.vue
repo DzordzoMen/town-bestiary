@@ -23,7 +23,7 @@
         mdi-earth
       </v-icon>
     </v-btn>
-    <v-btn :to="{ name: 'Carts' }">
+    <v-btn :to="{ name: 'Cards' }">
       <span>
         Karty
       </span>

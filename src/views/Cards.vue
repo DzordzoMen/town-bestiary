@@ -40,7 +40,7 @@
 import TheCollectionCard from '../components/TheCollectionCard.vue';
 
 export default {
-  name: 'Carts',
+  name: 'Cards',
   components: {
     TheCollectionCard,
   },

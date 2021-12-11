@@ -3,7 +3,7 @@ import VueRouter from 'vue-router';
 import Home from '../views/Home.vue';
 import Cities from '../views/Cities.vue';
 import City from '../views/City.vue';
-import Carts from '../views/Carts.vue';
+import Cards from '../views/Cards.vue';
 import MapPage from '../views/Map.vue';
 
 Vue.use(VueRouter);
@@ -31,9 +31,9 @@ const routes = [
     component: MapPage,
   },
   {
-    path: '/carts',
-    name: 'Carts',
-    component: Carts,
+    path: '/cards',
+    name: 'Cards',
+    component: Cards,
   },
   {
     path: '/report',
