@@ -5,7 +5,7 @@
         Ciekaowstka
       </v-col>
 
-      <v-col cols="12" class="text-center pt-4">
+      <v-col cols="12" class="text-center pt-4" v-if="favouriteCity">
         Twoje miasto
       </v-col>
 
