@@ -93,7 +93,9 @@
 
         <v-col cols="12" class="bottom-button">
           <v-btn block color="primary" @click="handleCTA()">
-            Adoptuj
+            <div>
+              Adoptuj
+            </div>
           </v-btn>
         </v-col>
       </template>
@@ -205,6 +207,10 @@ label {
   position: absolute;
   cursor: pointer;
   bottom: 0;
+  div {
+    font-size: 16px !important;
+    font-weight: 700;
+  }
 }
 
 @media (min-width: 800px) {
