@@ -4,7 +4,6 @@
     app
     grow
     color="primary"
-    background-color="secondary"
     class="elevation-1"
     mandatory
   >
@@ -51,3 +50,10 @@ export default {
   }),
 };
 </script>
+
+<style lang="scss" scoped>
+.v-bottom-navigation {
+  border-top: 1px solid #919191 !important;
+  background: #ead7c7 !important;
+}
+</style>
