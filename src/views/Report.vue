@@ -56,7 +56,27 @@
           dense
           flat
           solo
-        />
+        >
+          <template #append-outer>
+            <v-tooltip top>
+              <template v-slot:activator="{ on, attrs }">
+                <v-icon
+                  color="primary"
+                  dark
+                  v-bind="attrs"
+                  v-on="on"
+                >
+                  mdi-information-outline
+                </v-icon>
+              </template>
+              <span>
+                Po co wam mój numer telefonu? <br />
+                W przypadku szczególnych typów zgłoszeń potrzebna
+                jest dodatkowa weryfikacja przez organizacje
+              </span>
+            </v-tooltip>
+          </template>
+        </v-text-field>
       </v-col>
 
       <v-col cols="12">
@@ -165,7 +185,7 @@
         Dziękujemy za złożenie zgłoszenia
       </v-col>
       <v-col cols="12" class="pt-8 text--secondary" style="font-size: 20px">
-        Zostanie ono przesłane do odpowiednich organów
+        Zostanie ono przesłane do odpowiednich organizacji
       </v-col>
     </v-row>
   </v-container>
