@@ -1,25 +1,16 @@
 <template>
   <v-container>
     <v-row dense>
-      <v-col
-        class="city-name"
-        v-if="cityName"
-        @click="selectCity()"
-        v-ripple
-      >
+      <v-col class="city-name" v-if="cityName" @click="selectCity()" v-ripple>
         {{ cityName }}
       </v-col>
 
       <template v-if="!showAnimals">
         <v-col cols="12">
-          <div class="aniamls-card" v-ripple @click="showAnimalsCards()">
-            Zwierzęta
-          </div>
+          <div class="aniamls-card" v-ripple @click="showAnimalsCards()">Zwierzęta</div>
         </v-col>
 
-        <v-col cols="12" class="lato text-center pt-3" style="font-size: 22px">
-          Wydarzenia
-        </v-col>
+        <v-col cols="12" class="lato text-center pt-3" style="font-size: 22px"> Wydarzenia </v-col>
 
         <v-col cols="12" v-for="event in events" :key="event.id">
           <the-event-card v-bind="event" />
@@ -27,11 +18,7 @@
       </template>
 
       <template v-if="showAnimals">
-        <v-col
-          cols="6"
-          v-for="animal in species"
-          :key="animal.id"
-        >
+        <v-col cols="6" v-for="animal in species" :key="animal.id">
           <the-animal-card v-bind="animal" />
         </v-col>
       </template>
@@ -109,11 +96,7 @@ export default {
 .aniamls-card {
   width: 100%;
   height: 100px;
-  background-image:
-    linear-gradient(
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 0.6)
-    ),
+  background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)),
     url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-vKg9jiroSCBYrnkAv5kgJGvvT8A4tGeKow&usqp=CAU');
   background-position: center;
   background-repeat: no-repeat;
