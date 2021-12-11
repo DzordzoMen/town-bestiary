@@ -16,6 +16,14 @@
             Zwierzęta
           </div>
         </v-col>
+
+        <v-col cols="12" class="lato text-center pt-3" style="font-size: 22px">
+          Wydarzenia
+        </v-col>
+
+        <v-col cols="12" v-for="event in events" :key="event.id">
+          <the-event-card v-bind="event" />
+        </v-col>
       </template>
 
       <template v-if="showAnimals">
@@ -33,11 +41,15 @@
 
 <script>
 import TheAnimalCard from '../components/TheAnimalCard.vue';
+import TheEventCard from '../components/TheEventCard.vue';
 import Api from '../axios/api';
 
 export default {
   name: 'City',
-  components: { TheAnimalCard },
+  components: {
+    TheAnimalCard,
+    TheEventCard,
+  },
   data: () => ({
     name: null,
     species: [],
