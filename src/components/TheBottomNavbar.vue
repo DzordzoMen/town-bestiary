@@ -31,6 +31,14 @@
         mdi-cards
       </v-icon>
     </v-btn>
+    <v-btn :to="{ name: 'Adoption' }">
+      <span>
+        Adoptuj
+      </span>
+      <v-icon>
+        mdi-hand-heart
+      </v-icon>
+    </v-btn>
     <v-btn :to="{ name: 'Report' }">
       <span>
         Zgłoś
@@ -55,5 +63,11 @@ export default {
 .v-bottom-navigation {
   border-top: 1px solid #919191 !important;
   background: #ead7c7 !important;
+
+  a {
+    height: inherit !important;
+    min-width: 80px !important;
+    background: inherit !important;
+  }
 }
 </style>
