@@ -22,73 +22,23 @@
 </template>
 
 <script>
+import Api from '../axios/api';
+
 export default {
   name: 'Cities',
   data: () => ({
     favouriteCity: null,
-    cities: [
-      {
-        id: 1,
-        name: 'Kraków',
-      },
-      {
-        id: 2,
-        name: 'Warszawa',
-      },
-      {
-        id: 3,
-        name: 'Gdańsk',
-      },
-      {
-        id: 4,
-        name: 'Katowice',
-      },
-      {
-        id: 5,
-        name: 'Kielce',
-      },
-      {
-        id: 6,
-        name: 'Bydgoszcz',
-      },
-      {
-        id: 7,
-        name: 'Łódź',
-      },
-      {
-        id: 8,
-        name: 'Poznań',
-      },
-      {
-        id: 9,
-        name: 'Wrocław',
-      },
-      {
-        id: 10,
-        name: 'Lublin',
-      },
-      {
-        id: 11,
-        name: 'Białystok',
-      },
-      {
-        id: 12,
-        name: 'Gdynia',
-      },
-      {
-        id: 13,
-        name: 'Opole',
-      },
-      {
-        id: 14,
-        name: 'Szczecin',
-      },
-    ],
+    cities: [],
   }),
   computed: {
     favouriteCityId() {
       return this.favouriteCity?.id || null;
     },
+  },
+  created() {
+    Api.get('/cities').then(({ data }) => {
+      this.cities = data;
+    });
   },
   mounted() {
     const favourite = JSON.parse(localStorage.getItem('favourite'));
