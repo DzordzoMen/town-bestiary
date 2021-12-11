@@ -4,13 +4,17 @@
     color="primary"
     dark
   >
-    <div class="d-flex align-center">
+    <div
+      class="d-flex align-center"
+      @click="$router.push({ name: 'Home' })"
+    >
       <v-img
         alt="Vuetify Logo"
         class="shrink mr-3"
         contain
         src="../assets/logo2.png"
         transition="scale-transition"
+        :to="{ name: 'Home' }"
         width="40"
       />
 
