@@ -40,13 +40,53 @@
           type="number"
           v-if="donationType === 'custom'"
           class="pt-4"
+          min="0.01"
           background-color="transparent"
+          hide-details
           placeholder="Twoja dowolna kwota"
           outlined
           dense
           flat
           solo
         />
+      </v-col>
+
+      <v-col cols="12">
+        <label for="animal-pet">
+          Nadaj imię wybranemu zwierzakowi:
+        </label>
+        <v-text-field
+          v-model="animalName"
+          class="pt-4"
+          background-color="transparent"
+          placeholder="Nadaj imię, może Marek?"
+          hide-details
+          outlined
+          dense
+          flat
+          solo
+        />
+      </v-col>
+
+      <v-col cols="12">
+        <label>
+          Każda złotówka przeznaczona na adopcje jest wykorzystana na:
+        </label>
+
+        <ul>
+          <li>
+            domki dla jeży i hotele dla owadów
+          </li>
+          <li>
+            budowę budek lęgowych dla ptaków
+          </li>
+          <li>
+            kaczkomaty dla kaczek
+          </li>
+          <li>
+            wspomaganie fundacji prozwierzęcych
+          </li>
+        </ul>
       </v-col>
 
       <v-col cols="12" class="bottom-button">
@@ -90,6 +130,7 @@ export default {
       },
     ],
     customDonation: null,
+    animalName: null,
   }),
   methods: {
     setAnimalIcon() {
