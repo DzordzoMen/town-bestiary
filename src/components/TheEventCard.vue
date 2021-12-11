@@ -48,12 +48,12 @@ export default {
 .event-card {
   padding: 8px 12px;
   border-radius: 12px;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgb(231, 227, 227);
   max-height: 130px;
   height: 130px;
   display: flex;
   align-items: center;
-  color: white;
+  color: rgba(0, 0, 0, 0.8);
 
   &__title {
     overflow: hidden;
