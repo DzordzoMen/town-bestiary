@@ -72,6 +72,7 @@ export default {
   border: 2px solid #626262;
   min-height: 200px;
   background: #d9d9d9;
+  cursor: pointer;
 
   &__title {
     color: #626262;

@@ -91,6 +91,7 @@ export default {
   min-width: 95%;
   width: 95%;
   margin: auto;
+  cursor: pointer;
 }
 
 .aniamls-card {

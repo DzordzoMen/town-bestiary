@@ -84,6 +84,7 @@ export default {
   text-align: center;
   font-weight: 700;
   border-radius: 12px;
+  cursor: pointer;
   font-size: 22px;
   max-width: 90%;
   min-width: 90%;

@@ -46,4 +46,9 @@ $font-family: 'Lato';
   font-family: $font-family, sans-serif !important;
   font-weight: 700;
 }
+@media (min-width: 800px) {
+  .container {
+    max-width: 375px !important;
+  }
+}
 </style>

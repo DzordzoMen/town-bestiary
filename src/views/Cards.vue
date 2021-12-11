@@ -86,11 +86,19 @@ export default {
   border-radius: 10px;
   background: #fff;
   height: 40px;
+  cursor: pointer;
   z-index: 2;
 
   input {
     opacity: 0;
     position: absolute;
+  }
+}
+
+@media (min-width: 800px) {
+  .qr-scanner {
+    max-width: 375px;
+    left: unset !important;
   }
 }
 </style>

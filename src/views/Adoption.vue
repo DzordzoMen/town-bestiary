@@ -203,6 +203,13 @@ label {
 
 .bottom-button {
   position: absolute;
+  cursor: pointer;
   bottom: 0;
+}
+
+@media (min-width: 800px) {
+  .bottom-button {
+    max-width: 375px;
+  }
 }
 </style>

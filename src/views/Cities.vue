@@ -68,6 +68,7 @@ export default {
     margin: 4px 8px;
     width: 96%;
     border-radius: 12px;
+    cursor: pointer;
   }
 }
 </style>

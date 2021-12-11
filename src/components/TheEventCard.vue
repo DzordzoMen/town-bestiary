@@ -54,6 +54,7 @@ export default {
   display: flex;
   align-items: center;
   color: rgba(0, 0, 0, 0.8);
+  cursor: pointer;
 
   &__title {
     overflow: hidden;
