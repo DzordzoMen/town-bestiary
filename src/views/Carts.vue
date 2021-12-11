@@ -7,6 +7,31 @@
         />
       </v-col>
     </v-row>
+
+    <div
+      class="
+        qr-scanner
+        elevation-2
+        pa-1
+        d-flex
+        align-center
+        justify-center
+        primary
+        white--text
+        text-uppercase
+      "
+      v-ripple
+    >
+      <input
+        type="file"
+        accept="image/*"
+        capture="camera"
+      >
+      <v-icon class="mr-2" color="white">
+        mdi-qrcode
+      </v-icon>
+      Zeskanuj kod
+    </div>
   </v-container>
 </template>
 
@@ -50,5 +75,22 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss" scoped>
+.qr-scanner {
+  position: fixed;
+  bottom: 65px;
+  left: 3%;
+  width: 94%;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 10px;
+  background: #fff;
+  height: 40px;
+  z-index: 2;
+
+  input {
+    opacity: 0;
+    position: absolute;
+  }
+}
 </style>
