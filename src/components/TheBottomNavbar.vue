@@ -46,7 +46,7 @@
 export default {
   name: 'TheBottomNavbar',
   data: () => ({
-    navigation: 0,
+    navigation: null,
   }),
 };
 </script>
