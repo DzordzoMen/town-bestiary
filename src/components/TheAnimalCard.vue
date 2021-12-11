@@ -10,7 +10,7 @@
       <v-row dense>
         <v-col class="shrink lato-bold"> Populacja: </v-col>
         <v-col class="grow">
-          {{ getPopulationTranslated(population) }}
+          {{ population }}
         </v-col>
         <v-col class="shrink lato-bold"> Środowisko: </v-col>
         <v-col class="grow text-truncate d-block">
@@ -22,8 +22,6 @@
 </template>
 
 <script>
-import populationDict from '@/data/populationDict';
-
 export default {
   name: 'TheAnimalCard',
   props: {
@@ -56,10 +54,6 @@ export default {
       required: true,
     },
   },
-  methods: {
-    getPopulationTranslated(poplulation) {
-      return populationDict[poplulation];
-    },
-  },
+  methods: {},
 };
 </script>

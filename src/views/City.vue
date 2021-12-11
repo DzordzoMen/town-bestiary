@@ -19,16 +19,19 @@
 
       <template v-if="showAnimals">
         <v-col cols="6" v-for="animal in species" :key="animal.id">
-          <the-animal-card v-bind="animal" />
+          <the-animal-card v-bind="animal" @showAdvancedInfo="onshowAdvancedInfo" />
         </v-col>
       </template>
     </v-row>
+    <TheAnimalCardDetails v-model="dialog" :species="currentSpecies" />
   </v-container>
 </template>
 
 <script>
 import TheAnimalCard from '../components/TheAnimalCard.vue';
+import TheAnimalCardDetails from '../components/TheAnimalCardDetails.vue';
 import TheEventCard from '../components/TheEventCard.vue';
+import populationDict from '@/data/populationDict';
 import Api from '../axios/api';
 
 export default {
@@ -36,6 +39,7 @@ export default {
   components: {
     TheAnimalCard,
     TheEventCard,
+    TheAnimalCardDetails,
   },
   data: () => ({
     name: null,
@@ -43,6 +47,8 @@ export default {
     boards: [],
     events: [],
     showAnimals: false,
+    dialog: false,
+    currentSpecies: {},
   }),
   computed: {
     cityId() {
@@ -56,12 +62,23 @@ export default {
     const { cityId } = this;
     Api.get(`/cities/${cityId}`).then(({ data }) => {
       this.name = data.name;
-      this.species = data.species;
+      this.species = this.mapSpecies(data.species);
       this.boards = data.boards;
       this.events = data.events;
     });
   },
   methods: {
+    mapSpecies(species) {
+      const mapped = [];
+      for (let index = 0; index < species.length; index += 1) {
+        const element = species[index];
+        const translated = populationDict[element.population];
+        element.population = translated;
+        mapped.push(element);
+      }
+      return mapped;
+    },
+
     selectCity() {
       if (this.showAnimals) {
         this.showAnimals = false;
@@ -71,6 +88,10 @@ export default {
     },
     showAnimalsCards() {
       this.showAnimals = true;
+    },
+    onshowAdvancedInfo(id) {
+      this.dialog = true;
+      this.currentSpecies = this.species.find((s) => s.id === id);
     },
   },
 };
