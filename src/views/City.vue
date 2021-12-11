@@ -51,7 +51,7 @@ export default {
   },
   methods: {
     selectCity() {
-      this.$router.push({ name: 'Cities' });
+      this.$router.push({ name: 'Cities', params: { change: 'change' } });
     },
   },
 };

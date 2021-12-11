@@ -6,8 +6,16 @@
         v-for="city in cities"
         :key="city.id"
         @click="goToCity(city.id, city.name)"
+        class="d-flex align-center justify-space-between"
       >
         {{ city.name }}
+
+        <v-icon
+          @click.prevent="setFavourite(city.id, city.name)"
+          :color="favouriteCityId === city.id ? 'primary' : null"
+        >
+          {{ favouriteCityId === city.id ? 'mdi-star' : 'mdi-star-outline' }}
+        </v-icon>
       </v-col>
     </v-row>
   </v-container>
@@ -17,6 +25,7 @@
 export default {
   name: 'Cities',
   data: () => ({
+    favouriteCity: null,
     cities: [
       {
         id: 1,
@@ -76,9 +85,27 @@ export default {
       },
     ],
   }),
+  computed: {
+    favouriteCityId() {
+      return this.favouriteCity?.id || null;
+    },
+  },
+  mounted() {
+    const favourite = JSON.parse(localStorage.getItem('favourite'));
+    this.favouriteCity = favourite;
+    const change = this.$route.params?.change;
+
+    if (favourite?.id && !change) {
+      this.goToCity(favourite.id, favourite.name);
+    }
+  },
   methods: {
-    goToCity(id, name) {
+    goToCity(id, name = null) {
       this.$router.push({ name: 'City', params: { id, name } });
+    },
+    setFavourite(id, name) {
+      this.favouriteCity = { id, name };
+      localStorage.setItem('favourite', JSON.stringify({ id, name }));
     },
   },
 };

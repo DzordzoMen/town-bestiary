@@ -15,7 +15,7 @@ const routes = [
     component: Home,
   },
   {
-    path: '/cities',
+    path: '/cities/:change?',
     name: 'Cities',
     component: Cities,
   },
