@@ -5,7 +5,12 @@
         {{ fact.content }}
       </v-col>
 
-      <v-col cols="12" class="text-center pt-4" v-if="favouriteCity">
+      <v-col
+        cols="12"
+        class="text-center pt-4"
+        v-if="favouriteCity"
+        style="font-size: 18px"
+      >
         Twoje miasto
       </v-col>
 
