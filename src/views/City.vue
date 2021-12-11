@@ -101,6 +101,7 @@ export default {
     url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-vKg9jiroSCBYrnkAv5kgJGvvT8A4tGeKow&usqp=CAU');
   background-position: center;
   background-repeat: no-repeat;
+  cursor: pointer;
   background-size: cover;
   position: relative;
   background-color: #a1a1a1;
