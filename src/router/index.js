@@ -5,6 +5,7 @@ import Cities from '../views/Cities.vue';
 import City from '../views/City.vue';
 import Cards from '../views/Cards.vue';
 import MapPage from '../views/Map.vue';
+import Adoption from '../views/Adoption.vue';
 
 Vue.use(VueRouter);
 
@@ -38,6 +39,11 @@ const routes = [
   {
     path: '/report',
     name: 'Report',
+  },
+  {
+    path: '/adoption',
+    name: 'Adoption',
+    component: Adoption,
   },
 ];
 
