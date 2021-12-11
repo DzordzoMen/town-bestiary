@@ -2,7 +2,7 @@
   <v-container>
     <v-row>
       <v-col cols="12" class="alert">
-        Ciekaowstka
+        {{ fact.content }}
       </v-col>
 
       <v-col cols="12" class="text-center pt-4" v-if="favouriteCity">
@@ -10,7 +10,7 @@
       </v-col>
 
       <v-col
-        class="city-name elevation-1 mb-10"
+        class="city-name elevation-1 mb-8"
         v-if="favouriteCity"
         @click="goToCity()"
         v-ripple
@@ -31,6 +31,7 @@
 
 <script>
 import TheEventCard from '../components/TheEventCard.vue';
+import Api from '../axios/api';
 
 export default {
   name: 'Home',
@@ -40,6 +41,7 @@ export default {
   data: () => ({
     favouriteCity: null,
     events: [],
+    fact: {},
   }),
   computed: {
     favouriteCityId() {
@@ -52,6 +54,10 @@ export default {
   created() {
     const favourite = JSON.parse(localStorage.getItem('favourite'));
     this.favouriteCity = favourite;
+    Api.get('/home').then(({ data }) => {
+      this.events = data.events;
+      this.fact = data.fact;
+    });
   },
   methods: {
     goToCity() {
@@ -67,7 +73,7 @@ export default {
   border-radius: 8px;
   margin-top: 4px !important;
   margin: auto;
-  background: #fff;
+  background: rgb(231, 227, 227);
   max-width: 98%;
   color: #000;
   font-size: 16px;
