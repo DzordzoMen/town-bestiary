@@ -9,6 +9,7 @@ You can check it here:
 https://dzordzomen.github.io/town-bestiary/
 
 API:
+
 https://github.com/Morasiu/town-bestiary-api
 
 ## Screenshots
